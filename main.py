@@ -24,3 +24,7 @@ def get_params(text: str):
 @app.post("/predict/")
 def predict(item: Item):
     return classifier(item.text)
+
+@app.post("/text-length/")
+def text_length(item: Item):
+    return {"text_length": len(item.text)}
